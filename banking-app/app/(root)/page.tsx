@@ -1,8 +1,10 @@
+// @ts-check
 import React from 'react'
 import HeaderBox from '@/components/ui/HeaderBox'
 import TotalBalanceBox from '@/components/ui/TotalBalanceBox'
+import RightSidebar from './../../components/ui/RightSidebar';
 function Home() {
-  const loggedIn = {firstname: 'Alim'}
+  const loggedIn = {firstname: 'Alim', lastname:'Koroma', email: 'akoroma@test.com'}
   return (
     <section className="home">
       <div className="home-content">
@@ -21,6 +23,12 @@ function Home() {
         />
         </header>
       </div>
+      
+      <RightSidebar
+        user={loggedIn}
+        transactions ={[]}
+        banks={[{currentBalance: 123.50}, {currentBalance: 500.50}]}
+      />
     </section>
   )
 }
